@@ -43,11 +43,62 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.32.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.0.34\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +107,70 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Uow\Web\HttpContextCurrentUnitOfWorkProvider.cs" />
+    <Compile Include="Web\Mvc\Authorization\AbpAuthorizeAttribute.cs" />
+    <Compile Include="Web\Mvc\Controllers\AbpAppViewController.cs" />
+    <Compile Include="Web\Mvc\Controllers\AbpController.cs" />
+    <Compile Include="Web\Mvc\Controllers\AbpHandleErrorAttribute.cs" />
+    <Compile Include="Web\Mvc\Controllers\AbpScriptsController.cs" />
+    <Compile Include="Web\Mvc\Controllers\ControllerConventionalRegistrar.cs" />
+    <Compile Include="Web\Mvc\Controllers\Localization\AbpLocalizationController.cs" />
+    <Compile Include="Web\Mvc\Controllers\Results\AbpJsonResult.cs" />
+    <Compile Include="Web\Mvc\Controllers\WindsorControllerFactory.cs" />
+    <Compile Include="Web\Mvc\Extensions\HtmlHelperResourceExtensions.cs" />
+    <Compile Include="Web\Mvc\Models\ErrorViewModel.cs" />
+    <Compile Include="Web\Mvc\Models\MvcAjaxResponse.cs" />
+    <Compile Include="Web\Mvc\Resources\Embedded\Handlers\EmbeddedResourceHttpHandler.cs" />
+    <Compile Include="Web\Mvc\Resources\Embedded\Handlers\EmbeddedResourceRouteHandler.cs" />
+    <Compile Include="Web\Mvc\Resources\WebResourceHelper.cs" />
+    <Compile Include="Web\Mvc\Views\AbpWebViewPage.cs" />
+    <Compile Include="Web\Mvc\Views\AbpWebViewPageOfTModel.cs" />
+    <Compile Include="WebApi\Authorization\AbpAuthorizeAttribute.cs" />
+    <Compile Include="WebApi\Controllers\AbpApiController.cs" />
+    <Compile Include="WebApi\Controllers\AbpControllerActivator.cs" />
+    <Compile Include="WebApi\Controllers\ApiControllerConventionalRegistrar.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\ApiControllerActionBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\ApiControllerBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\BatchApiControllerBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\DynamicApiControllerActionHelper.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\DynamicApiControllerBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\DynamicApiServiceNameHelper.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\DynamicApiVerbHelper.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\IApiControllerActionBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\IApiControllerBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Builders\IBatchApiControllerBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Clients\ApiClientBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Clients\DynamicApiClientBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Clients\IApiClientBuilder.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Clients\IDynamicApiClient.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\DynamicApiController.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\DynamicApiControllerInfo.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\DynamicApiControllerManager.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\DynamicApiMethodInfo.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\DynamicApiRouteConfig.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Formatters\PlainTextFormatter.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Interceptors\AbpDynamicApiControllerInterceptor.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\AbpServiceProxiesController.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\Angular\Actions\ActionScriptWriter.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\Angular\Actions\DeleteActionScriptWriter.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\Angular\Actions\GetActionScriptWriter.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\Angular\Actions\PostActionScriptWriter.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\Angular\AngularProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\IScriptProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\jQuery\Actions\ActionScriptProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\jQuery\Actions\HttpDeleteActionScriptProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\jQuery\Actions\HttpGetActionScriptProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\jQuery\Actions\HttpPostActionScriptProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\jQuery\Actions\HttpPutActionScriptProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\jQuery\Actions\HttpVerbExtensions.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\jQuery\JQueryProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\ProxyScriptType.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\ScriptProxyManager.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\ServiceProxiesController.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Selectors\AbpApiControllerActionSelector.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Selectors\AbpHttpControllerSelector.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Selectors\DyanamicHttpActionDescriptor.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Selectors\DynamicHttpControllerDescriptor.cs" />
+    <Compile Include="WebApi\Controllers\Filters\AbpExceptionFilterAttribute.cs" />
     <Compile Include="Web\Models\ErrorInfoBuilder.cs" />
     <Compile Include="Web\Models\IErrorInfoBuilder.cs" />
     <Compile Include="Web\Models\ValidationErrorInfo.cs" />

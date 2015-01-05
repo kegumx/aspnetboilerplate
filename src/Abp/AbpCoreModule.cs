@@ -7,6 +7,9 @@ using Abp.Dependency;
 using Abp.Domain.Uow;
 using Abp.Events.Bus;
 using Abp.Modules;
+using Abp.AutoMapper;
+using Abp.EntityFramework;
+using Abp.EntityFramework.Dependency;
 
 namespace Abp
 {
@@ -15,8 +18,11 @@ namespace Abp
         public override void PreInitialize()
         {
             IocManager.AddConventionalRegistrar(new BasicConventionalRegistrar());
+            IocManager.AddConventionalRegistrar(new EntityFrameworkConventionalRegisterer());
+
             UnitOfWorkRegistrar.Initialize(IocManager);
             ApplicationServiceInterceptorRegistrar.Initialize(IocManager);
+            AbpAutoMapperRegistrar.Initialize(IocManager);
         }
 
         public override void Initialize()
@@ -30,6 +36,8 @@ namespace Abp
                 {
                     InstallInstallers = false
                 });
+
+            AbpEntityFrameworkRegistrar.Initialize(IocManager);
         }
 
         public override void PostInitialize()
